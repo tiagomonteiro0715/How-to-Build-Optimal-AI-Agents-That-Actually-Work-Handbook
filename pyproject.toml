@@ -1,0 +1,15 @@
+[project]
+name = "downloads"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "crewai>=1.14.4",
+    "ddgs>=9.14.2",
+    "duckduckgo-search>=8.1.1",
+    "faker>=40.15.0",
+    "langchain-community>=0.4.1",
+    "langchain-ollama>=1.1.0",
+    "ollama>=0.6.2",
+]
