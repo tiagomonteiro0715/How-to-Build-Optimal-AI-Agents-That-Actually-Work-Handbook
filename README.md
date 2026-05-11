@@ -57,18 +57,6 @@ For example, why a single agent often beats a team, why most multi-agent failure
 - **Three Working Code Examples**: A sequential single-agent pipeline, a hierarchical centralized team, and a decentralized peer-review team
 - **The Evals Mindset**: Why the organizations that win with agents are the ones with the best evaluation pipelines, not the most agents
 
-## The Decision Algorithm
-
-The handbook's core is a 7-step algorithm for deciding the right agent setup for your problem:
-
-1. **Check your budget**: Local (Ollama, free) vs. API (OpenAI / Anthropic / Google, pay-per-token)
-2. **Start with ONE agent**: Frontier single agents may beat naïve multi-agent teams
-3. **Measure performance**: If a single agent solves the task >45% of the time, ship it; don't add agents
-4. **Assess task parallelism**: Sequential tasks get *worse* with a team; only naturally parallel tasks benefit
-5. **Pick the topology by task type**: Centralized for analysis/structured work (~4x error amplification); decentralized for exploration/open-ended research
-6. **Cap team size and tools per agent**: 3–4 agents max, 1–3 tools per agent
-7. **Build evals before you scale**: Accuracy, efficiency, and trajectory metrics on real organizational data
-
 ## Getting Started
 
 ### Prerequisites
@@ -76,16 +64,6 @@ The handbook's core is a 7-step algorithm for deciding the right agent setup for
 - A general understanding of what an LLM is
 - [Ollama](https://ollama.com/) installed locally or use it inside Google Colab (recommended if hardware is limited)
 - A Jupyter Notebook setup (Google Colab works out of the box for all the examples in this repo)
-
-## Table of Contents (Handbook)
-
-### Part 1: Background
-
-### Part 2: The Decision Algorithm
-
-### Part 3: Code Examples (Ollama + CrewAI)
-
-### Part 4: The Future of AI is Evals
 
 ## Code Examples
 
