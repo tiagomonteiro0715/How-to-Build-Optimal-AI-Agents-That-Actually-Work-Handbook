@@ -22,9 +22,7 @@
 
 ## Table of Contents
 - [What is this?](#what-is-this)
-- [The Decision Algorithm](#the-decision-algorithm)
 - [Getting Started](#getting-started)
-- [Table of Contents (Handbook)](#table-of-contents-handbook)
 - [Code Examples](#code-examples)
 - [Contributing](#contributing)
 - [Related Resources](#related-resources)
@@ -69,42 +67,55 @@ For example, why a single agent often beats a team, why most multi-agent failure
 
 The code for all three cases lives in a single Jupyter notebook designed to run end-to-end in **Google Colab** with a free GPU. You can also run it locally if you have Ollama installed.
 
+### Quick start (recommended)
+
+This repo ships with a `pyproject.toml` and lock file, so installing all dependencies is one command:
+
 ```bash
 # Clone the repository
 git clone https://github.com/tiagomonteiro0715/How-to-Build-Optimal-AI-Agents-That-Actually-Work-Handbook.git
-
-# Navigate to the directory
 cd How-to-Build-Optimal-AI-Agents-That-Actually-Work-Handbook
 
-# (Optional, for local runs) Install Ollama
-# On macOS/Linux:
-curl -fsSL https://ollama.com/install.sh | sh
-
 # Install uv (fast Python package installer)
-# On macOS/Linux:
+# macOS/Linux:
 curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# On Windows:
+# Windows:
 powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 
-# Create a virtual environment with uv
+# Install all dependencies from pyproject.toml / uv.lock
+uv sync
+
+# (Optional, for local runs) Install Ollama and pull the model
+curl -fsSL https://ollama.com/install.sh | sh
+ollama pull mistral-small3.2
+
+# Launch the notebook
+uv run jupyter notebook
+```
+
+That's it — `uv sync` creates the virtual environment and installs the exact pinned versions automatically. Use `uv run <command>` to execute anything inside that environment without manually activating it.
+
+### Manual install (alternative)
+
+If you'd rather install packages explicitly instead of relying on the lock file:
+
+```bash
+git clone https://github.com/tiagomonteiro0715/How-to-Build-Optimal-AI-Agents-That-Actually-Work-Handbook.git
+cd How-to-Build-Optimal-AI-Agents-That-Actually-Work-Handbook
+
+# Install uv (see Quick start above), then:
 uv venv
+source .venv/bin/activate            # macOS/Linux
+# .venv\Scripts\activate             # Windows
 
-# Activate the virtual environment
-# On macOS/Linux:
-source .venv/bin/activate
-
-# On Windows:
-.venv\Scripts\activate
-
-# Install all required Python packages
 uv pip install langchain-ollama ollama crewai duckduckgo-search langchain-community ddgs faker notebook
 
-# Pull the model used in the notebook
+# (Optional, for local runs)
+curl -fsSL https://ollama.com/install.sh | sh
 ollama pull mistral-small3.2
 ```
 
-If you'd rather skip local setup, open the notebook directly in Google Colab — it installs Ollama, `uv`, all Python deps, and pulls the model for you in the first two cells.
+If you'd rather skip local setup entirely, open the notebook directly in Google Colab — it installs Ollama, `uv`, all Python deps, and pulls the model for you in the first two cells.
 
 ## Contributing
 
