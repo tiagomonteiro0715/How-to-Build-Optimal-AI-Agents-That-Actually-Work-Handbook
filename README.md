@@ -18,7 +18,7 @@
 
 ---
 
-[Read on FreeCodeCamp]([https://www.freecodecamp.org/news/author/tiagomonteiro)](https://www.freecodecamp.org/news/how-to-build-optimal-ai-agents-that-actually-work-a-handbook-for-devs/)
+[Read on FreeCodeCamp](https://www.freecodecamp.org/news/how-to-build-optimal-ai-agents-that-actually-work-a-handbook-for-devs)
 
 ## Table of Contents
 - [What is this?](#what-is-this)
